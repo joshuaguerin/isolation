@@ -4,5 +4,46 @@ A C++ implementation of the board game [Isolation](https://en.wikipedia.org/wiki
 ## Compilation
 At the moment the project doesn't need any per-machine configuration. To compile simply download, and run `make` in the directory with the [Makefile](./Makefile). It should compile everything and generate the `tournament` binary.
 
+## Use
+All options are for the single, `tournament` binary.
+
+```
+./tournament
+```
+* Runs the agents against each other, prints only the result.
+
+### Flags
+```
+--help
+```
+* Prints the help file. Also available with the `-h` flag.
+
+```
+--grid n
+```
+* Runs the tournament with a custom board size. All boards are square.
+
+```
+--output
+```
+* Prints turn-by-turn information. Also available as `-o`.
+
+```
+--pause
+```
+* Requires the user to hit the `return` key between moves. Builds suspense.
+* Also available as `-p`.
+
+```
+--simulations n
+```
+* Runs the tournament `n` times. Good to determine which agent is better.
+* Also available with the `-s` flag.
+
+```
+--winner
+```
+* Suppresses all informations, usually for the -s flag.
+
 ## Issues
 I've used this framework for several semesters in my Artificial Intelligence course. So far no bugs have been reported by students. If you notice anything you would like to report, please feel free to create an issue.
