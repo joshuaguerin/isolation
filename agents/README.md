@@ -18,5 +18,5 @@ Further modifications to finish adding:
 * Update the `Makefile` to include compilation.
 
 Update the `main.cpp` driver:
-* Add an `#include` statement.
+* Add an `#include` statement. (Around lines 33/34.)
 * Edit the `tournament` declaration in the main (line 63) to include the agent.
