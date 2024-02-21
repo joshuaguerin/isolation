@@ -45,5 +45,73 @@ All options are for the single, `tournament` binary.
 ```
 * Suppresses all informations, usually for the -s flag.
 
+## Sample Run
+
+Note, numerous moves were removed to simplify output.
+
+```
+./tournament -o
+Starting game:
+Initial board: First move black.
+  0123456
+0|   b   |
+1|       |
+2|       |
+3|       |
+4|       |
+5|       |
+6|   w   |
+
+
+Current move: black pawn
+  0123456
+0|       |
+1|    b  |
+2|       |
+3|       |
+4|       |
+5|   X   |
+6|   w   |
+
+
+Current move: white pawn
+  0123456
+0|X      |
+1|    b  |
+2|       |
+3|       |
+4|       |
+5|   X   |
+6|  w    |
+.
+.
+.
+
+Current move: black pawn
+  0123456
+0|XXXXXXX|
+1|XXXXXXX|
+2|XXXXXXX|
+3|wXX X b|
+4| XX   X|
+5|XX X   |
+6| X XX  |
+
+
+Current move: white pawn
+  0123456
+0|XXXXXXX|
+1|XXXXXXX|
+2|XXXXXXX|
+3|XXX X b|
+4|wXX   X|
+5|XX X   |
+6| X XX  |
+
+
+...And the winner is...
+The black pawn: Random Agent!
+```
+
 ## Issues
 I've used this framework for several semesters in my Artificial Intelligence course. So far no bugs have been reported by students. If you notice anything you would like to report, please feel free to create an issue.
