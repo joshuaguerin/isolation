@@ -113,5 +113,12 @@ Current move: white pawn
 The black pawn: Random Agent!
 ```
 
+## Modifying
+I've made this available on a public repo for the explicit purpose of learning. If you are a professor who is interested in using this for a project (or student), please reach out! It would warm my heart to learn that someone out there found it useful! For any non-academic purposes, please reach out for permission.
+
+I've tried to streamline the addition of new agents. *Most* of the work required is to put together your own code in its own files in the [agents](agents) directory. I've drafted up two relatively simple (and unsophisticated) agents for this purpose to present basic functionality. The only other additions required are to modify the [Makefile](Makefile) so that compilation is possible, and make a couple of quick edits to the [driver](main.cpp) to `#include` your agent and add it to the current tournament.
+
+For a more detailed account of adding agents, please see the README in the [agents directory](agents).
+
 ## Issues
 I've used this framework for several semesters in my Artificial Intelligence course. So far no bugs have been reported by students. If you notice anything you would like to report, please feel free to create an issue.
