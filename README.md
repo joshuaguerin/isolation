@@ -120,5 +120,7 @@ I've tried to streamline the addition of new agents. *Most* of the work required
 
 For a more detailed account of adding agents, please see the README in the [agents directory](agents).
 
+If more sophisticated modificatoins to existing functionality are desired you can always reach out on the issues page, but my ability to support you may be a bit more limited depending on timing. Otherwise, I have tried to keep things somwhat organized and readable to make your job easier!
+
 ## Issues
 I've used this framework for several semesters in my Artificial Intelligence course. So far no bugs have been reported by students. If you notice anything you would like to report, please feel free to create an issue.
