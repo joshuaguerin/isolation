@@ -32,6 +32,7 @@ class tournament {
   bool pause_between_moves;
   bool display_winner;
   unsigned board_size;
+  std::string init_file;
   
  public:
   tournament();
@@ -41,7 +42,7 @@ class tournament {
    */
   
   tournament(unsigned num_simulations, bool print_moves, bool user_pause, \
-	     bool print_winners, unsigned grid_size);
+	     bool print_winners, unsigned grid_size, std::string init_file = "");
   /*
    * Description: Constructs an isola tournament given the user's preferences
    *              as indicated by the given parameters (which correspond
@@ -82,15 +83,17 @@ template <typename TBlackAgent, typename TWhiteAgent>
   pause_between_moves=true;
   display_winner=true;
   board_size = 7;
+  init_file = "";
 }
 
 template <typename TBlackAgent, typename TWhiteAgent>
-  tournament<TBlackAgent, TWhiteAgent>::tournament(unsigned num_simulations, bool print_moves, bool user_pause, bool print_winners, unsigned grid_size) {
+tournament<TBlackAgent, TWhiteAgent>::tournament(unsigned num_simulations, bool print_moves, bool user_pause, bool print_winners, unsigned grid_size, std::string init_file) {
   total_simulations = num_simulations;
   output_moves=print_moves;
   pause_between_moves=user_pause;
   display_winner=print_winners;
   board_size = grid_size;
+  this -> init_file = init_file;
 }
 
 template <typename TBlackAgent, typename TWhiteAgent>
@@ -144,6 +147,10 @@ round_winner tournament<TBlackAgent, TWhiteAgent>::run_simulation() {
   action next;
   round_winner winner;
 
+  // Read in starting board, if one is provided.
+  if(init_file != "")
+    game.init_board(init_file);
+  
   // Randomly generate starting color.
   if(rand()%2 == 0)
     current_move = black;

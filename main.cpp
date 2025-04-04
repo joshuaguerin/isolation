@@ -13,13 +13,17 @@
 #include <getopt.h>  // getopt()
 #include <cstdlib>   // atoi()
 #include <algorithm> // remove()
+#include <string>    // string for initialization file
 
-// Simulation Flags
+using namespace std;
+
+// Simulation Flags & Variables
 bool output_moves=false;
 bool pause_between_moves=false;
 bool display_winner=true;
 unsigned num_simulations=1;
 unsigned grid_size=7;
+string init_file = "";
 
 #include "tournament.h" // Templated class that runs an isola tournament.
 #include "types.h"      // Types associated with game/tournament.
@@ -32,9 +36,6 @@ unsigned grid_size=7;
  */
 #include "agents/random_agent.h"
 #include "agents/ordered_agent.h"
-
-
-using namespace std;
 
 
 void parse_args(int argc, char *argv[]);
@@ -62,7 +63,7 @@ int main(int argc, char *argv[]) {
   // to initialize any two agents of your own design or mine for testing.
   tournament<random_agent::agent, ordered_agent::agent>
     tourney(num_simulations, output_moves, pause_between_moves,
-	    display_winner, grid_size);
+	    display_winner, grid_size, init_file);
 
   // Run tournament
   tourney.run();
@@ -77,11 +78,12 @@ void parse_args(int argc, char *argv[]) {
   opterr = 0;
 
   // getopt_long arguments
-  string options = "g:hops:w";
+  string options = "g:hi:ops:w";
   const struct option long_options[] =
     {
       {"grid",        required_argument,  0, 'g'},
       {"help",        no_argument,        0, 'h'},
+      {"init",        no_argument,        0, 'i'},
       {"output",      no_argument,        0, 'o'},
       {"pause",       no_argument,        0, 'p'},
       {"simulations", required_argument,  0, 's'},
@@ -105,6 +107,9 @@ void parse_args(int argc, char *argv[]) {
       // Help flag
       help(argv[0], options);
       exit(0);
+      break;
+    case 'i':
+      init_file = optarg;
       break;
     case 'o':
       // Output individual moves

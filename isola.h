@@ -37,6 +37,7 @@ class isola {
    */
   
  public:
+  // Constructors
   isola();
   /*
    * Description: Initialize 7x7 isola board with players on the north
@@ -49,6 +50,8 @@ class isola {
    *              and south ends.
    */
 
+  void init_board(std::string file_name);
+  
   void print();
   /*
    * Description: Prints the current game board configuration to the terminal.
