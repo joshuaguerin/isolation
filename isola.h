@@ -51,6 +51,18 @@ class isola {
    */
 
   void init_board(std::string file_name);
+  /*
+   * Description: Initializes the board to a custom starting configuration,
+   *              which is stored as plaintext in the file file_name.
+   * Parameters:
+   *     file_name - The name of the file containing the initial configuration. 
+   * Preconditions: file_name is the name of a valid text file containing a
+   *                board configuration.
+   * Postconditions: The board is rewritten including agent locations.
+   * Note: Illegal board configurations described in file_name may result
+   *       in undefined behaviors.
+   */
+
   
   void print();
   /*
