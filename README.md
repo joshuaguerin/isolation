@@ -29,6 +29,7 @@ All options are for the single, `tournament` binary.
 ```
 * Initializes the board to a custom starting configuration.
 * Configurations are specified in `file_name`, a plain text file.
+* A sample configuration and documentation are provided in the [init](init) directory.
 * Also available with the `-i` flag.
 
 ```
