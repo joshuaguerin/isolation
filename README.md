@@ -21,7 +21,15 @@ All options are for the single, `tournament` binary.
 ```
 --grid n
 ```
-* Runs the tournament with a custom board size. All boards are square.
+* Runs the tournament with a custom board size. All boards are square
+* Also available with the `-g` flag.
+
+```
+--init file_name
+```
+* Initializes the board to a custom starting configuration.
+* Configurations are specified in `file_name`, a plain text file.
+* Also available with the `-i` flag.
 
 ```
 --output
