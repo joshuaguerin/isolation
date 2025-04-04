@@ -109,6 +109,7 @@ void parse_args(int argc, char *argv[]) {
       exit(0);
       break;
     case 'i':
+      // Board initialization file
       init_file = optarg;
       break;
     case 'o':
@@ -164,6 +165,9 @@ void help(string binary_name, string options) {
        << "         Sets gameboard size to " << bold << 'n' << regular << 'x' << bold << 'n' << regular << '.' << endl
        << bold << "-h | --help" << regular
        << "           Print this help." << endl
+       << bold << "-i | --init file_name" << regular
+       << " Initializes the board." << endl
+       << "                      Allows a custom starting point, specified as a text file." << endl
        << bold << "-o | --output" << regular
        << "         Outputs turn-by-turn moves." << endl
        << bold << "-p | --pause" << regular
