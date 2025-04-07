@@ -30,7 +30,10 @@ All options are for the single, `tournament` binary.
 * Initializes the board to a custom starting configuration.
 * Configurations are specified in `file_name`, a plain text file.
 * A sample configuration and documentation are provided in the [init](init) directory.
+* *This is a new feature, and is currently considered experimental.[^1]*
 * Also available with the `-i` flag.
+
+[^1]: If you discover bugs or other descrepancies, please consider submitting an [issue](https://github.com/joshuaguerin/isolation/issues).
 
 ```
 --output
