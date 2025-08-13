@@ -37,6 +37,7 @@ class isola {
    */
   
  public:
+  // Constructors
   isola();
   /*
    * Description: Initialize 7x7 isola board with players on the north
@@ -49,6 +50,20 @@ class isola {
    *              and south ends.
    */
 
+  void init_board(std::string file_name);
+  /*
+   * Description: Initializes the board to a custom starting configuration,
+   *              which is stored as plaintext in the file file_name.
+   * Parameters:
+   *     file_name - The name of the file containing the initial configuration. 
+   * Preconditions: file_name is the name of a valid text file containing a
+   *                board configuration.
+   * Postconditions: The board is rewritten including agent locations.
+   * Note: Illegal board configurations described in file_name may result
+   *       in undefined behaviors.
+   */
+
+  
   void print();
   /*
    * Description: Prints the current game board configuration to the terminal.

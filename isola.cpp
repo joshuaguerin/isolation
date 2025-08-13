@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include <fstream>
 
 #include "isola.h"
 
@@ -35,6 +36,47 @@ isola::isola(unsigned n) : board(n, vector<char>(n, ' ')) {
   // Place pawns.
   board[black_loc.row][black_loc.col] = 'b';
   board[white_loc.row][white_loc.col] = 'w';
+}
+
+void isola::init_board(string file_name) {
+  ifstream board_initializer(file_name);
+  char current;
+  int values_read = 0, row=0, col=0;
+
+  current = board_initializer.get();
+  
+  while(board_initializer && values_read < board_size*board_size) {
+    values_read += 1;
+
+    // Replace with a punch.
+    if(current == 'X') {
+      board[row][col] = current;
+    }
+
+    // Reassign black location.
+    if(current == 'b') {
+      black_loc.row = row;
+      black_loc.col = col;
+      board[row][col] = current;
+    }
+
+    // Reassign white location.
+    if(current == 'w') {
+      white_loc.row = row;
+      white_loc.col = col;
+      board[row][col] = current;
+    }
+
+    col++;
+    if(board_size < col) {
+      row++;
+      col = 0;
+    }
+    
+    current = board_initializer.get();
+  }
+  
+  board_initializer.close();
 }
 
 void isola::print() {
